@@ -1,0 +1,27 @@
+1. jdbc:h2:~/dbegzaminas/egzamino_db
+
+2. CREATE TABLE
+generaline_parduotuve_prekes
+(ID INT AUTO_INCREMENT, pavadinimas VARCHAR(50), kaina DECIMAL (10,2) DEFAULT 1, itraukimo_data DATE DEFAULT CURRENT_TIMESTAMP());
+
+3. INSERT INTO generaline_parduotuve_prekes  
+(pavadinimas, kaina, itraukimo_data)
+VALUES
+('kamuolys', 5.98, '2021-02-02'),
+('blynas', 1.22, '2020-10-10'),
+('kramtoma guma', 1.00, '2019-11-11');
+
+4. SELECT PAVADINIMAS , KAINA , ITRAUKIMO_DATA FROM generaline_parduotuve_prekes  
+ORDER BY kaina DESC;
+
+5. SELECT ID , KAINA , ITRAUKIMO_DATA  FROM generaline_parduotuve_prekes  
+WHERE ITRAUKIMO_DATA >= '2020-01-01' AND KAINA >2;
+
+6. SELECT ID FROM generaline_parduotuve_prekes  
+WHERE LENGTH(PAVADINIMAS )=5;
+
+7. ALTER TABLE generaline_parduotuve_prekes  
+ADD COLUMN nutraukimo_data DATE;
+
+8. ALTER TABLE generaline_parduotuve_prekes  
+ALTER COLUMN nutraukimo_data DATE NOT NULL.
